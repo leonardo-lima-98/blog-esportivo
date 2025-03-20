@@ -1,0 +1,32 @@
+Aqui está a estrutura exigida para seu projeto:
+
+1. Front-end (Next.js)
+Framework: Next.js (para SSR/SEO e roteamento nativo)
+Estilização: Material-UI (MUI) para UI moderna e responsiva
+Gerenciamento de Estado: Context API + Zustand
+Consumo da API: Axios ou Fetch API
+Roteamento: Next.js (páginas estáticas e dinâmicas)
+Autenticação (se necessário): NextAuth.js ou JWT
+Componentização: Criar componentes reutilizáveis para cards de notícias, navbar, footer, etc.
+📂 Estrutura do Front-end
+
+2. Back-end (FastAPI)
+Framework: FastAPI (ótimo desempenho e validação automática com Pydantic)
+ORM: SQLAlchemy com Alembic para migração do banco
+Banco de Dados: PostgreSQL
+Autenticação: JWT (caso tenha usuários)
+Cache: Redis para otimizar buscas e carregar notícias rapidamente
+Upload de imagens: Suporte a upload se necessário
+WebSocket: Se quiser atualizar notícias em tempo real
+📂 Estrutura do Back-end
+
+3. Banco de Dados (PostgreSQL)
+ORM: SQLAlchemy para manipulação do banco
+Tabelas:
+Notícias (ID, título, conteúdo, autor, data, imagem)
+Categorias (ID, nome)
+Usuários (ID, nome, email, senha - se houver autenticação)
+Cache: Redis para acelerar buscas frequentes
+4. Docker (Opcional, para facilitar deploy)
+Docker Compose para rodar PostgreSQL + backend
+Imagem separada para Next.js (ou Vercel para hospedagem do front-end)

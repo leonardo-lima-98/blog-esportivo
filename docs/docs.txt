@@ -1,0 +1,68 @@
+Aqui está a estrutura exigida para seu projeto:
+
+1. Front-end (Next.js)
+Framework: Next.js (para SSR/SEO e roteamento nativo)
+Estilização: Material-UI (MUI) para UI moderna e responsiva
+Gerenciamento de Estado: Context API + Zustand
+Consumo da API: Axios ou Fetch API
+Roteamento: Next.js (páginas estáticas e dinâmicas)
+Autenticação (se necessário): NextAuth.js ou JWT
+Componentização: Criar componentes reutilizáveis para cards de notícias, navbar, footer, etc.
+📂 Estrutura do Front-end
+
+frontend/
+│── public/                 # Arquivos estáticos (ícones, imagens)
+│── src/
+│   ├── components/         # Componentes reutilizáveis (Navbar, Footer, Cards)
+│   ├── contexts/           # Context API (Autenticação, Configurações)
+│   ├── store/              # Zustand (Estados globais)
+│   ├── pages/              # Páginas Next.js
+│   │   ├── index.tsx       # Página inicial
+│   │   ├── noticia/[id].tsx # Página dinâmica para notícias
+│   │   ├── api/            # Rotas API internas (opcional)
+│   ├── styles/             # Estilos globais e tema do MUI
+│   ├── utils/              # Funções auxiliares (formatadores, validações)
+│── next.config.js          # Configurações do Next.js
+│── tsconfig.json           # Configuração do TypeScript
+│── package.json            # Dependências do projeto
+│── .env                    # Variáveis de ambiente
+2. Back-end (FastAPI)
+Framework: FastAPI (ótimo desempenho e validação automática com Pydantic)
+ORM: SQLAlchemy com Alembic para migração do banco
+Banco de Dados: PostgreSQL
+Autenticação: JWT (caso tenha usuários)
+Cache: Redis para otimizar buscas e carregar notícias rapidamente
+Upload de imagens: Suporte a upload se necessário
+WebSocket: Se quiser atualizar notícias em tempo real
+📂 Estrutura do Back-end
+
+backend/
+│── app/
+│   ├── main.py           # Ponto de entrada da API
+│   ├── models/           # Modelos SQLAlchemy
+│   ├── schemas/          # Schemas Pydantic
+│   ├── routes/           # Rotas da API
+│   ├── services/         # Lógica de negócios
+│   ├── db.py             # Configuração do banco de dados
+│   ├── auth.py           # Sistema de autenticação (se necessário)
+│   ├── config.py         # Configurações gerais
+│── alembic/              # Migração do banco de dados
+│── requirements.txt      # Dependências do projeto
+│── .env                  # Variáveis de ambiente
+3. Banco de Dados (PostgreSQL)
+ORM: SQLAlchemy para manipulação do banco
+Tabelas:
+Notícias (ID, título, conteúdo, autor, data, imagem)
+Categorias (ID, nome)
+Usuários (ID, nome, email, senha - se houver autenticação)
+Cache: Redis para acelerar buscas frequentes
+4. Docker (Opcional, para facilitar deploy)
+Docker Compose para rodar PostgreSQL + backend
+Imagem separada para Next.js (ou Vercel para hospedagem do front-end)
+📂 Arquivos Docker
+
+docker/
+│── Dockerfile.backend      # Configuração do FastAPI
+│── Dockerfile.frontend     # Configuração do Next.js
+│── docker-compose.yml      # Banco de dados e API rodando juntos
+Essa estrutura garante boas práticas, escalabilidade e desempenho.

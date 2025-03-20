@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+venv/
+.venv/
+.env
+.python-version
+
+# Backend
+backend/.env
+backend/alembic/versions/*.py
+!backend/alembic/versions/__init__.py
+backend/logs/
+
+# Node/React
+frontend/node_modules/
+frontend/.pnp
+frontend/.pnp.js
+frontend/coverage/
+frontend/build/
+frontend/dist/
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Docker
+.docker/
+docker-compose.override.yml
+.docker-sync/
+
+# Database
+*.sqlite3
+*.db
+postgresql-data/
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.vs/
+
+# OS
+.DS_Store
+Thumbs.db
+.directory
+
+# Project specific
+uploads/
+media/
+static/
+logs/
+temp/
+*.log

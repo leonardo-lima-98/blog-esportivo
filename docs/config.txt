@@ -1,0 +1,69 @@
+
+🟢 1. Configurando o Front-end (Next.js + Material-UI + Zustand)
+1.1 Criar o projeto Next.js
+
+npx create-next-app@latest frontend --typescript
+Isso cria um projeto Next.js com suporte a TypeScript.
+
+1.2 Entrar no diretório do projeto
+
+cd frontend
+1.3 Instalar as dependências
+
+npm install @mui/material @emotion/react @emotion/styled zustand axios
+Explicação:
+
+@mui/material: Biblioteca Material-UI para UI.
+@emotion/react e @emotion/styled: Dependências do Material-UI.
+zustand: Gerenciamento de estado leve.
+axios: Para fazer requisições HTTP.
+1.4 Rodar o projeto
+
+npm run dev
+O Next.js rodará localmente em http://localhost:3000.
+
+🔵 2. Configurando o Back-end (FastAPI + PostgreSQL)
+2.1 Criar o diretório do back-end
+
+mkdir backend && cd backend
+2.2 Criar um ambiente virtual (opcional, mas recomendado)
+
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate  # Windows
+2.3 Instalar FastAPI e dependências
+
+pip install fastapi[all] sqlalchemy psycopg2 alembic pydantic
+Explicação:
+
+fastapi[all]: Instala FastAPI com suporte a Swagger.
+sqlalchemy: ORM para PostgreSQL.
+psycopg2: Driver do PostgreSQL.
+alembic: Para migração do banco de dados.
+pydantic: Para validação de dados.
+2.4 Criar o banco de dados (PostgreSQL)
+Certifique-se de que o PostgreSQL está rodando e crie o banco de dados:
+
+
+psql -U seu_usuario -d postgres
+CREATE DATABASE blog_db;
+Se necessário, substitua seu_usuario pelo seu usuário PostgreSQL.
+
+2.5 Rodar a API
+
+uvicorn app.main:app --reload
+A API estará disponível em http://localhost:8000.
+
+📌 Conectando Front-end e Back-end
+No Next.js, edite o arquivo src/utils/api.ts (crie se não existir) para configurar as chamadas de API:
+
+typescript
+
+import axios from "axios";
+
+const api = axios.create({
+    baseURL: "http://localhost:8000",
+});
+
+export default api;
+Agora o Next.js pode consumir a API FastAPI.
